@@ -72,7 +72,6 @@ class EmergencyForm extends Component {
     const { emergencyType, emergencyDetails } = this.state;
     this.setState({ isSubmitClicked: true });
     this.props.onSubmit(emergencyType, emergencyDetails);
-    // window.location.href= window.location.origin + "/location"
   };
 
   handleChange = (e) => {
@@ -138,10 +137,6 @@ class EmergencyForm extends Component {
             </div>
             
             <button onClick={this.handleNotifyHospital}>Notify Nearby Hospital</button>
-            
-            
-            
-
             <div>Your current location has been shared with nearby CPR practitioners.</div>
             <div>Your current location has been shared with nearby Ambulance. Estimated time to arrive is 14 minutes </div>
             

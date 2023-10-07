@@ -71,7 +71,7 @@ const SpeechToText = () => {
       </button>
       {translatedText && (
         <div>
-          <h2>Translated Text:</h2>
+          <h2>Translated Text sent to CPR Practitioner:</h2>
           <p>{translatedText}</p>
         </div>
       )}

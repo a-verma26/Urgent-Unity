@@ -11,7 +11,7 @@ const MapComponent = () => {
     window.initMap = initMap;
     const apiKey = process.env.REACT_APP_API_KEY;
     const script = document.createElement('script');
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places&callback=initMap`;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyCdT6-ri_oxVb7sVIVnr2bNNjE_ENkYS8g&libraries=places&callback=initMap`;
     script.async = true;
     script.defer = true;
 
