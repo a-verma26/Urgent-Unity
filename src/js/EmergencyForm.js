@@ -3,7 +3,8 @@ import HospitalNotification from './HospitalNotification';
 import MapComponent from './MapComponent';
 import RealTimeChat from './RealTimeChat';
 import '../scss/EmergencyForm.scss';
-import SpeechToTextDemo from './SpeechToTextDemo';
+import SpeechToTextDemo from './SpeechToText';
+import SpeechToText from './SpeechToText';
 
 class EmergencyForm extends Component {
   constructor(props) {
@@ -116,9 +117,10 @@ class EmergencyForm extends Component {
               placeholder="Provide additional details or notes about the emergency..."
             />
           </label>
-
+        
           <button type="submit">Submit</button>
         </form>
+        <SpeechToText/>
         </div>}
         {isSubmitClicked && (
           <div className='mapContainer'>
@@ -136,6 +138,7 @@ class EmergencyForm extends Component {
             </div>
             
             <button onClick={this.handleNotifyHospital}>Notify Nearby Hospital</button>
+            
             
             
 

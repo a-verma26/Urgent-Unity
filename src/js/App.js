@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import EmergencyForm from './EmergencyForm';
 import SignupCredentials from './SignupCredentials';
 import '../scss/App.scss';
+import SpeechToText from './SpeechToText';
 class App extends Component {
   constructor(props) {
     super(props);
@@ -24,6 +25,7 @@ class App extends Component {
         </nav>
           <Routes>
             <Route path="/" element={<SignupCredentials />} />
+  
             <Route
               path="/emergency"
               element={<EmergencyForm onSubmit={this.handleEmergencySubmit} />}
