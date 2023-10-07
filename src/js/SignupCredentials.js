@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import '../scss/SignupCredentials.scss';
+import SignupDetails from './SignupDetails';
 class SignupCredentials extends Component {
   constructor(props) {
     super(props);
     this.state = {
       username: '',
       password: '',
+      nextClicked:false
     };
   }
 
@@ -13,53 +15,20 @@ class SignupCredentials extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  handleSubmit = async (e) => {
+  handleClick = (e) => {
     e.preventDefault();
-
-    const { username, password } = this.state;
-
-    // Construct the request payload
-    const requestBody = {
-      username: username,
-      password: password,
-      // Add other fields if needed
-    };
-
-    try {
-      const response = await fetch('http://localhost:3001/signup', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          // Add any other headers if needed
-        },
-        body: JSON.stringify(requestBody),
-      });
-
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-
-      // Assuming the response contains JSON data, you can parse it
-      const responseData = await response.json();
-
-      // Handle the response data as needed
-      console.log('API Response:', responseData);
-
-      // Redirect to the details page
-      window.location.href = window.location.origin + '/details';
-    } catch (error) {
-      console.error('Error during API request:', error);
-      // Handle errors, e.g., show an error message to the user
-    }
+    this.setState({nextClicked: true})
   };
   
 
   render() {
+
     return (
-      <div className='signupCredentialsContainer'>
+      <>
+      {!this.state.nextClicked && <div className='signupCredentialsContainer'>
         
         <h2>Signup - Login Credentials</h2>
-        <form onSubmit={this.handleSubmit}>
+        <div >
           <label>
             Username:
             <input
@@ -80,9 +49,11 @@ class SignupCredentials extends Component {
               required
             />
           </label>
-          <button type="submit">Next</button>
-        </form>
-      </div>
+          <button type="submit" onClick={this.handleClick}>Next</button>
+        </div>
+      </div>}
+      {this.state.nextClicked && <SignupDetails username={this.state.username} password={this.state.password}/>}
+      </>
     );
   }
 }

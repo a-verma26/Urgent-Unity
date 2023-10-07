@@ -19,22 +19,53 @@ class SignupDetails extends Component {
       policyNumber: '',
       uploadedHealthInsurance: null,
       permanentAddress: '',
+      username: this.props.username || '', // Initialize from props or set to an empty string
+      password: this.props.password || '', 
     };
   }
 
   handleChange = (e) => {
-    const { name, value, type } = e.target;
-    // If the input type is file (for file uploads), handle differently
-    this.setState({
-      [name]: type === 'file' ? e.target.files[0] : value,
-    });
+    const { name, type } = e.target;
+  
+    if (type === 'file') {
+      // Create a FormData object
+      const formData = new FormData();
+      // Append the file to the FormData object
+      formData.append(name, e.target.files[0]);
+      // Update the state with the FormData object
+      this.setState({
+        [name]: formData,
+      });
+    } else {
+      // For non-file inputs, update the state as usual
+      this.setState({
+        [name]: e.target.value,
+      });
+    }
   };
-
-  handleSubmit = (e) => {
+  handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle signup details logic (e.g., API call for saving user details)
-    window.alert('Details submitted:', this.state);
-    window.location.href= window.location.origin +"/emergency";
+    try {
+        // Make a POST request to the server
+        const response = await fetch('http://localhost:3001/signup', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(this.state),
+        });
+  
+        if (response.ok) {
+          // Handle success (you can redirect or show a success message)
+          window.alert('Details submitted successfully!');
+          window.location.href = window.location.origin + '/emergency';
+        } else {
+          // Handle error
+          console.error('Failed to submit details:', response.statusText);
+        }
+      } catch (error) {
+        console.error('Error submitting details:', error);
+      }
   };
 
   render() {

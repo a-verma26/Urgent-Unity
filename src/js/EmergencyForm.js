@@ -3,6 +3,7 @@ import HospitalNotification from './HospitalNotification';
 import MapComponent from './MapComponent';
 import RealTimeChat from './RealTimeChat';
 import '../scss/EmergencyForm.scss';
+import SpeechToTextDemo from './SpeechToTextDemo';
 
 class EmergencyForm extends Component {
   constructor(props) {
@@ -103,6 +104,7 @@ class EmergencyForm extends Component {
               <option value="Allergic Reaction">Allergic Reaction (Anaphylaxis)</option>
             </select>
           </label>
+          {/* <SpeechToTextDemo/> */}
           <label>
             Additional Details:
             <textarea
@@ -148,15 +150,24 @@ class EmergencyForm extends Component {
     
       {notifyNearbyHospital && <HospitalNotification />}
       {isSubmitClicked && <RealTimeChat emergencyType={emergencyType} />}
-      <div>
-      <h3>Frequently Asked Questions</h3>
-      <ul>
-        <li>How does the app work?</li>
-        <li>What information is shared with CPR practitioners?</li>
-        <li>How is my data handled?</li>
-        {/* Add more FAQs as needed */}
-      </ul>
-    </div>
+      <div className='footer'>
+  <h3>Frequently Asked Questions</h3>
+  <ul>
+    <li>
+      <strong>Q: How does the app work?</strong>
+      <p>A: The app connects users with nearby CPR practitioners and emergency services to provide timely assistance during emergencies.</p>
+    </li>
+    <li>
+      <strong>Q: What information is shared with CPR practitioners?</strong>
+      <p>A: Only essential information, such as your location and emergency type, is shared with CPR practitioners to ensure a prompt response.</p>
+    </li>
+    <li>
+      <strong>Q: How is my data handled?</strong>
+      <p>A: Your data is handled securely and is only used for emergency response purposes. We prioritize user privacy and data protection.</p>
+    </li>
+    {/* Add more FAQs as needed */}
+  </ul>
+</div>
     </div>
 
     );

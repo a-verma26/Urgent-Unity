@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import EmergencyForm from './EmergencyForm';
-import MapComponent from './MapComponent';
 import SignupCredentials from './SignupCredentials';
-import SignupDetails from './SignupDetails';
-
+import '../scss/App.scss';
 class App extends Component {
   constructor(props) {
     super(props);
@@ -14,32 +12,26 @@ class App extends Component {
       cprLocation: null,
     };
   }
-
   handleEmergencySubmit = (type) => {
     this.setState({ emergencyType: type });
   };
-
   render() {
     return (
       <Router>
         <div>
+        <nav className="navbar">
           <h1>Emergency Response App</h1>
+        </nav>
           <Routes>
             <Route path="/" element={<SignupCredentials />} />
-            <Route path="/details" element={<SignupDetails />} />
             <Route
               path="/emergency"
               element={<EmergencyForm onSubmit={this.handleEmergencySubmit} />}
             />
-            {/* <Route
-              path="/location"
-              element={<MapComponent />}
-            /> */}
           </Routes>
         </div>
       </Router>
     );
   }
 }
-
 export default App;
