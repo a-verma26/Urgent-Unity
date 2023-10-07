@@ -3,9 +3,9 @@ import "../scss/SpeechToText.scss"
 import AWS from 'aws-sdk';
 
 AWS.config.update({
-  accessKeyId: 'AKIA2J3GCLST6BZEVWTJ',
-  secretAccessKey: '3TWaeud3zOckBcs32OaxcMKd6dzQOYhJTmE6ZFy7',
-  region: 'us-east-1', // Set your desired AWS region
+  accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
+  secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
+  region: process.env.REACT_APP_AWS_REGION, // Set your desired AWS region
 });
 
 const translate = new AWS.Translate();

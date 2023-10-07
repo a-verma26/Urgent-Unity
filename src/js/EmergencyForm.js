@@ -153,7 +153,7 @@ class EmergencyForm extends Component {
     
       {notifyNearbyHospital && <HospitalNotification />}
       {isSubmitClicked && <RealTimeChat emergencyType={emergencyType} />}
-      <div className='footer'>
+     {!isSubmitClicked &&  <div className='footer'>
   <h3>Frequently Asked Questions</h3>
   <ul>
     <li>
@@ -170,7 +170,7 @@ class EmergencyForm extends Component {
     </li>
     {/* Add more FAQs as needed */}
   </ul>
-</div>
+</div>}
     </div>
 
     );
