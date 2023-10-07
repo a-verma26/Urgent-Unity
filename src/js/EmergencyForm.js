@@ -4,6 +4,7 @@ import MapComponent from './MapComponent';
 import RealTimeChat from './RealTimeChat';
 import '../scss/EmergencyForm.scss';
 import SpeechToText from './SpeechToText';
+import ambulanceImg from "./assets/ambulance.png"
 
 class EmergencyForm extends Component {
   constructor(props) {
@@ -81,12 +82,19 @@ class EmergencyForm extends Component {
     this.setState({ notifyNearbyHospital: true });
   };
 
+   handleCloseModal = () => {
+    this.setState({ notifyNearbyHospital: false });
+  };
+
   render() {
     const { emergencyType, emergencyDetails, isSubmitClicked, notifyNearbyHospital, userLocation } = this.state;
 
     return (
       <div className='headContainer'>
-        {isSubmitClicked && <div className='emergencyFormContainer'>
+        <nav className="navbar">
+          <h1>Emergency Response App</h1>
+        </nav>
+        {!isSubmitClicked && <div className='emergencyFormContainer'>
           <form onSubmit={this.handleSubmit}>
             <label>
               Type of Emergency:
@@ -119,7 +127,7 @@ class EmergencyForm extends Component {
           </form>
           <SpeechToText />
         </div>}
-        {!isSubmitClicked && (
+        {isSubmitClicked && (
 
           <div className='mapContainer'>
             {userLocation && userLocation.address && (
@@ -134,16 +142,18 @@ class EmergencyForm extends Component {
             <div className='buttonContainer'>
               <button onClick={this.handleNotifyHospital}>Notify Nearby Hospital</button>
             </div>
-            <div style={{ marginBottom: '10px' }}>Your current location has been shared with nearby CPR practitioners.</div>
+            <div style={{ marginBottom: '10px', textAlign: 'center', color: 'red', fontSize: '14px', marginTop: '10px' }}>
+        Your current location has been shared with nearby CPR practitioners.</div>
 
             <MapComponent emergencyType={emergencyType} />
-            <div>Estimated time to Ambulance arrive is 14 minutes </div>
+            <img className="ambulance-img" src={ambulanceImg} alt="Ambulance"/>
+            <div className='message'>Estimated Arrival Time of Ambulance : 14 minutes </div>
 
           </div>
         )}
 
 
-        {notifyNearbyHospital && <HospitalNotification />}
+        {notifyNearbyHospital && <HospitalNotification onClose={this.handleCloseModal}/>}
         {isSubmitClicked && <RealTimeChat emergencyType={emergencyType} />}
         {!isSubmitClicked && <div className='footer'>
           <h3>Frequently Asked Questions</h3>

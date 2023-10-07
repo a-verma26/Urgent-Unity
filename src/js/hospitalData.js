@@ -1,14 +1,14 @@
 // hospitalData.js
 const hospitalData = [
   {
-    name: 'Inova Fairfax Hospital ',
+    name: 'Inova Fairfax',
     address: '3300 Gallows Rd Falls Church, VA 22042',
     location: { lat: 38.8573, lng: -77.2278 }, // Replace with actual coordinates
     healthInsurance: "Yes",
     waitTime: 7
   },
   {
-    name: 'Inova Fair Oaks Hospital',
+    name: 'Inova Fair Oaks',
     address: '3600 Joseph Siewick Dr Fairfax, VA 22033',
     location: { lat:38.859633, lng: -77.283583 }, // Replace with actual coordinates
     healthInsurance: "No",
@@ -16,7 +16,7 @@ const hospitalData = [
 
   },
   {
-    name: 'Inova Reston Hospital ',
+    name: 'Inova Reston',
     address: '1850 Town Center Pkwy Reston, VA 20190',
     location: { lat:38.9654, lng: -77.3567 }, // Replace with actual coordinates
     healthInsurance: "No",

@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
+import alertImg from "./assets/car.png"
+
 let initMap; 
 
 const MapComponent = () => {
@@ -77,8 +79,9 @@ const MapComponent = () => {
 
   return (
     <div className='container'>
-      <div ref={mapRef} style={{ height: '500px', width: '100%' }} />
-      <div>Estimated Arrival Time of CPR Practitioner: is {arrivalTimeMinutes} minutes</div>
+      <div ref={mapRef} style={{ height: '400px', width: '100%' }} />
+      <img className="alert-img" src={alertImg} alt="Alert"/>
+      <div className='message'>Estimated Arrival Time of CPR Practitioner : {arrivalTimeMinutes} minutes</div>
     </div>
   );
 };

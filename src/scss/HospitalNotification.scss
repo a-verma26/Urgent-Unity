@@ -14,7 +14,7 @@
     ul {
       list-style: none;
       padding: 0;
-      margin: 0;
+      margin: 0 auto;
       display: flex; /* Display list items horizontally */
   
       li {
@@ -76,6 +76,10 @@
         background-color: #6c757d;
         cursor: not-allowed;
       }
+    }
+    .sendinformationwrapper{
+      margin: 0 auto;
+      margin-top: 20px;
     }
   }
   

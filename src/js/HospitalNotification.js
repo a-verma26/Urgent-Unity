@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import hospitalData from './hospitalData';
 import '../scss/HospitalNotification.scss';
+import Modal from './Modal'; 
 
 class HospitalNotification extends Component {
   constructor(props) {
@@ -83,7 +84,7 @@ class HospitalNotification extends Component {
     // You can add logic here to send user information to the selected hospital
     if (selectedHospital) {
       // Example: Alert the hospital name
-      alert(`Sending user information to ${selectedHospital.name}`);
+      alert(`User information sent to ${selectedHospital.name}`);
     } else {
       alert('Please select a hospital before sending user information.');
     }
@@ -93,6 +94,7 @@ class HospitalNotification extends Component {
     const { userLocation, hospitals, selectedHospital } = this.state;
 
     return (
+      <Modal onClose={this.props.onClose}>
       <div className='hospitalContainer'>
         <h2>Hospital List</h2>
         {userLocation && (
@@ -100,10 +102,10 @@ class HospitalNotification extends Component {
             {hospitals.map((hospital, index) => (
               <li key={index}>
                 <strong>{hospital.name}</strong>
-                <p>Distance: {hospital.distance}</p>
-                <p>Duration: {hospital.duration}</p>
-                <p>Health Insurance: {hospital.healthInsurance}</p>
-                <p>Wait Time: {hospital.waitTime} minutes</p>
+                <p><b>Distance:</b> {hospital.distance}</p>
+                <p><b>Duration: </b>{hospital.duration}</p>
+                <p><b>Health Insurance: </b>{hospital.healthInsurance}</p>
+                <p><b>Wait Time: </b>{hospital.waitTime} minutes</p>
 
                 {/* Button to select the hospital */}
                 <button
@@ -116,17 +118,18 @@ class HospitalNotification extends Component {
             ))}
           </ul>
         )}
-        {!userLocation && <p>Loading user location...</p>}
+        {!userLocation && <p>Fetching Nearby hospital List...</p>}
 
         {/* Button to send user information to the selected hospital */}
         {selectedHospital && (
-          <div>
+          <div className='sendinformationwrapper'>
             <button onClick={this.handleSendUserInfo}>
               Send User Information to {selectedHospital.name}
             </button>
           </div>
         )}
       </div>
+      </Modal>
     );
   }
 }

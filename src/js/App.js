@@ -20,9 +20,7 @@ class App extends Component {
     return (
       <Router>
         <div>
-        <nav className="navbar">
-          <h1>Emergency Response App</h1>
-        </nav>
+        
           <Routes>
             <Route path="/" element={<SignupCredentials />} />
   

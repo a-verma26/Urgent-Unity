@@ -6,14 +6,13 @@
 
 $navbar-bg-color: #0050a0; // Background color
 $navbar-text-color: #ffffff; // Text color
-$navbar-height: 60px; // Navbar height
+$navbar-height: 260px; // Navbar height
 
 .navbar {
-background-color: $navbar-bg-color;
+background-image: url(https://static.naukimg.com/s/7/123/i/bg-image.ba9809cb.jpg);
 color: $navbar-text-color;
 height: $navbar-height;
 display: flex;
-align-items: center;
 padding: 0 20px; // Adjust padding as needed
 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Add shadow for a material design look
 font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
