@@ -24,7 +24,7 @@ class SignupCredentials extends Component {
   render() {
 
     return (
-      <>
+      <div className='mainContainerchild'>
       {!this.state.nextClicked && <div className='signupCredentialsContainer'>
         
         <h2>Signup - Login Credentials</h2>
@@ -53,7 +53,7 @@ class SignupCredentials extends Component {
         </div>
       </div>}
       {this.state.nextClicked && <SignupDetails username={this.state.username} password={this.state.password}/>}
-      </>
+      </div>
     );
   }
 }

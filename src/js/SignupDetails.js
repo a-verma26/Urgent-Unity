@@ -70,6 +70,7 @@ class SignupDetails extends Component {
 
   render() {
     return (
+        <div className='mainContainer'>
       <div className="signupdetailsContainer">
         <h2>Signup - Additional Details</h2>
         <form onSubmit={this.handleSubmit}>
@@ -198,6 +199,7 @@ class SignupDetails extends Component {
           
           <button type="submit">Signup</button>
         </form>
+      </div>
       </div>
     );
   }

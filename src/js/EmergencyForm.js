@@ -86,9 +86,9 @@ class EmergencyForm extends Component {
     const { emergencyType, emergencyDetails, isSubmitClicked, notifyNearbyHospital, userLocation } = this.state;
 
     return (
-      <div className='mainContainer'>
-      <div className='emergencyFormContainer'>
-        {!isSubmitClicked && <form onSubmit={this.handleSubmit}>
+      <div className=''>
+      {!isSubmitClicked && <div className='emergencyFormContainer'>
+          <form onSubmit={this.handleSubmit}>
           <label>
             Type of Emergency:
             <select name="emergencyType" value={emergencyType} onChange={this.handleChange}>
@@ -118,10 +118,10 @@ class EmergencyForm extends Component {
           </label>
 
           <button type="submit">Submit</button>
-        </form>}
-
+        </form>
+        </div>}
         {isSubmitClicked && (
-          <>
+          <div className='mapContainer'>
             <MapComponent emergencyType={emergencyType} />
             {userLocation && userLocation.address && (
               <div>
@@ -144,9 +144,9 @@ class EmergencyForm extends Component {
             
            
             
-          </>
+          </div>
         )}
-      </div>
+      
     
       {notifyNearbyHospital && <HospitalNotification />}
       {isSubmitClicked && <RealTimeChat emergencyType={emergencyType} />}

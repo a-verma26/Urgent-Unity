@@ -1,4 +1,5 @@
-body {
+
+.mainContainer{
   margin: 0;
   padding: 0;
   background-color: white;  // Set the background color to white
@@ -6,9 +7,10 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-}
+
 .signupdetailsContainer {
   max-width: 400px;
+  display: inline-block;
   margin-left: 5%;
   margin-top: 50px;
   background: #FBF6F1; /* Light blue background */
@@ -76,4 +78,5 @@ body {
 }
 .signupdetailsContainer button:hover {
   background-color: #0050A0; /* Slightly darker blue on hover */
+}
 }
