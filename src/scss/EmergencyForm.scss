@@ -4,6 +4,7 @@
   height: 100vh; /* Full height of the viewport */
   width: 100vw; /* Full width of the viewport */
   background-image: url('../js/assets/second.jpg');
+  text-align: center;
 }
 .emergencyFormContainer {
     display: inline-block;
@@ -140,27 +141,35 @@
   }
   
   .mapContainer{
+    text-align: left;
     background-color: white;
     border-radius: 16px;
     padding: 20px;
-    width: 80%;
+    width: 60%;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 0 auto; /* Center-align the container */
+    display: inline-block;
+    margin-top: 3%;
     
-        button {
-          background-color: #28a745;
-          color: #fff;
-          padding: 10px;
-          border: none;
-          border-radius: 4px;
-          cursor: pointer;
-          transition: background-color 0.3s;
     
-          &:hover {
-            background-color: #218838;
-          }
+    .buttonContainer{
+      display: inline-block;
+      button {
+        background-color: #0050a0;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+  
+        &:hover {
+          background-color: #0050a0;
         }
+      }
+
+    }
+        
       }
   
