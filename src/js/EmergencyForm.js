@@ -86,7 +86,7 @@ class EmergencyForm extends Component {
     const { emergencyType, emergencyDetails, isSubmitClicked, notifyNearbyHospital, userLocation } = this.state;
 
     return (
-      <div className=''>
+      <div className='headContainer'>
       {!isSubmitClicked && <div className='emergencyFormContainer'>
           <form onSubmit={this.handleSubmit}>
           <label>

@@ -1,3 +1,10 @@
+.headContainer{
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh; /* Full height of the viewport */
+  width: 100vw; /* Full width of the viewport */
+  background-image: url('../js/assets/second.jpg');
+}
 .emergencyFormContainer {
     display: inline-block;
     max-width: 400px;
@@ -13,6 +20,7 @@
     text-align: left;
     font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     font-size: 18px;
+  
     
   
     form {
@@ -132,6 +140,7 @@
   }
   
   .mapContainer{
+    background-color: white;
     border-radius: 16px;
     padding: 20px;
     width: 80%;
