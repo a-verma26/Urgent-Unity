@@ -45,27 +45,28 @@ class SignupDetails extends Component {
   };
   handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-        // Make a POST request to the server
-        const response = await fetch('http://localhost:3001/signup', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(this.state),
-        });
+    window.location.href = window.location.origin + '/emergency';
+    // try {
+    //     // Make a POST request to the server
+    //     const response = await fetch('http://localhost:3001/signup', {
+    //       method: 'POST',
+    //       headers: {
+    //         'Content-Type': 'application/json',
+    //       },
+    //       body: JSON.stringify(this.state),
+    //     });
   
-        if (response.ok) {
-          // Handle success (you can redirect or show a success message)
-          window.alert('Details submitted successfully!');
-          window.location.href = window.location.origin + '/emergency';
-        } else {
-          // Handle error
-          console.error('Failed to submit details:', response.statusText);
-        }
-      } catch (error) {
-        console.error('Error submitting details:', error);
-      }
+    //     if (response.ok) {
+    //       // Handle success (you can redirect or show a success message)
+    //       window.alert('Details submitted successfully!');
+         
+    //     } else {
+    //       // Handle error
+    //       console.error('Failed to submit details:', response.statusText);
+    //     }
+    //   } catch (error) {
+    //     console.error('Error submitting details:', error);
+    //   }
   };
 
   render() {
