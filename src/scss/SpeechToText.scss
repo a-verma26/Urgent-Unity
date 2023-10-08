@@ -10,8 +10,28 @@
   }
   
   div {
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #ddd;
+    
+  }
+  .leftWrapper{
+    display: inline-block;
+    width: 20%;
+  }
+
+  .rightWrapper{
+    display: inline-block;
+    width: 80%;
+    vertical-align: top;
+    margin-top: 20px;
+    .textheading{
+      font-weight: 500;
+    font-size: 14px;
+  
+    }
+    .textmsg{
+      color: #156669;
+    }
+  }
+  .speak-img{
+    width: 70px;
   }
 }

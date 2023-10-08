@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import healthCareTips from './healthCareTips.js';
 import '../scss/healthCareTips.scss';
+import bulbImg from "./assets/bulb.jpg"
 
 class RealTimeChat extends Component {
   render() {
@@ -10,16 +11,16 @@ class RealTimeChat extends Component {
     const tipsForEmergencyType = healthCareTips[emergencyType] || [];
 
     return (
-      <div className='healthCareContainer'>
-        <h2>Health Care Tips</h2>
-        <p>
-          <strong>Emergency Type:</strong> {emergencyType}
-        </p>
+      <div className='footer'>
+        <img style={{ display: 'inline-block', width: '100px', verticalAlign:'top', marginTop:'18px' }} className="bulb-img" src={bulbImg} alt="Bulb"/>
+        <div  style={{ display: 'inline-block', width: '80%' }}>
+        <h3 >Do these Health Care Tips for {emergencyType} while CPR Practitioner is on its way !</h3>
         <ul>
           {tipsForEmergencyType.map((tip, index) => (
-            <li key={index}>{tip}</li>
+            <li key={index}><p>{tip}</p></li>
           ))}
         </ul>
+        </div>
       </div>
     );
   }

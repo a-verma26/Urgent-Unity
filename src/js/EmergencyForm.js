@@ -90,10 +90,7 @@ class EmergencyForm extends Component {
     const { emergencyType, emergencyDetails, isSubmitClicked, notifyNearbyHospital, userLocation } = this.state;
 
     return (
-      <div className='headContainer'>
-        <nav className="navbar">
-          <h1>Emergency Response App</h1>
-        </nav>
+      <div className={`headContainer${isSubmitClicked ? 'next' : ''}`}>
         {!isSubmitClicked && <div className='emergencyFormContainer'>
           <form onSubmit={this.handleSubmit}>
             <label>
@@ -147,7 +144,7 @@ class EmergencyForm extends Component {
 
             <MapComponent emergencyType={emergencyType} />
             <img className="ambulance-img" src={ambulanceImg} alt="Ambulance"/>
-            <div className='message'>Estimated Arrival Time of Ambulance : 14 minutes </div>
+            <div className='message'>Estimated Arrival Time of Ambulance : <b>14 minutes</b> </div>
 
           </div>
         )}

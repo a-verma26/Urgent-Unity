@@ -12,8 +12,8 @@
   max-width: 400px;
   display: inline-block;
   margin-left: 5%;
-  margin-top: 50px;
-  background: #FBF6F1; /* Light blue background */
+  margin-top: 30px;
+    background: #FBF6F1; /* Light blue background */
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
   padding: 20px;
@@ -64,7 +64,7 @@
   outline: none;
 }
 .signupdetailsContainer button {
-  background-color: #0070E0; /* Blue button background color */
+  background-color: #156669; /* Blue button background color */
   color: #FBF6F1;
   padding: 15px;
   border: none;
@@ -77,6 +77,6 @@
   display: block; /* Ensure button takes the full width */
 }
 .signupdetailsContainer button:hover {
-  background-color: #0050A0; /* Slightly darker blue on hover */
+  background-color: #156669; /* Slightly darker blue on hover */
 }
 }

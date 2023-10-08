@@ -81,7 +81,7 @@ const MapComponent = () => {
     <div className='container'>
       <div ref={mapRef} style={{ height: '400px', width: '100%' }} />
       <img className="alert-img" src={alertImg} alt="Alert"/>
-      <div className='message'>Estimated Arrival Time of CPR Practitioner : {arrivalTimeMinutes} minutes</div>
+      <div className='message'>Estimated Arrival Time of CPR Practitioner : <b>{arrivalTimeMinutes} minutes</b></div>
     </div>
   );
 };

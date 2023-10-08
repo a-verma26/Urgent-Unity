@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import "../scss/SpeechToText.scss"
+import speakImg from "./assets/speak.png"
 import AWS from 'aws-sdk';
 
 AWS.config.update({
@@ -71,8 +72,13 @@ const SpeechToText = () => {
       </button>
       {translatedText && (
         <div>
-          <h2>Translated Text sent to CPR Practitioner:</h2>
-          <p>{translatedText}</p>
+          <div className='leftWrapper'>
+          <img className="speak-img" src={speakImg} alt="Alert"/>
+          </div>
+          <div  className='rightWrapper'> 
+          <div className='textheading'>Translated Text sent to CPR Practitioner:</div>
+          <div className='textmsg'>{translatedText}</div>
+          </div>
         </div>
       )}
       <audio ref={audioRef} controls style={{ display: 'none' }} />
