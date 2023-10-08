@@ -49,7 +49,7 @@ const SpeechToText = () => {
     const params = {
       Text: speechResult,
       SourceLanguageCode: 'en',
-      TargetLanguageCode: 'fr'
+      TargetLanguageCode: 'es'
     };
 
     translate.translateText(params, (err, data) => {
