@@ -28,6 +28,7 @@ class EmergencyForm extends Component {
 
   fetchUserLocation = () => {
     const apiKey = process.env.REACT_APP_API_KEY;
+    console.log(apiKey);
 
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition(
