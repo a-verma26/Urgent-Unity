@@ -21,7 +21,7 @@ class EmergencyForm extends Component {
       },
     };
   }
-
+//
   componentDidMount() {
     this.fetchUserLocation();
   }
